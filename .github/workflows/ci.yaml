@@ -11,32 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Step 2: Display repo files (debugging)
       - name: List files
         run: ls -la
 
-      # Step 3: Run basic test
       - name: Run Test
         run: echo "CI Pipeline is working successfully 🚀"
 
-      # Step 4: (Optional) Install dependencies example
-      - name: Install dependencies
-        run: |
-          echo "Installing dependencies..."
-          # Example: apt-get update -y
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
 
-      # Step 5: (Optional) Build step
-      - name: Build Application
-        run: |
-          echo "Building application..."
-          - name: Build Docker Image
-      # Step 6: Setup Docker
-       - name: Set up Docker
-         uses: docker/setup-buildx-action@v3
-      # Step 6: Image build 
       - name: Build Docker Image
         run: docker build -t rajiv-app .
