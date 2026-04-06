@@ -34,6 +34,9 @@ jobs:
         run: |
           echo "Building application..."
           - name: Build Docker Image
+      # Step 6: Setup Docker
+       - name: Set up Docker
+         uses: docker/setup-buildx-action@v3
       # Step 6: Image build 
       - name: Build Docker Image
         run: docker build -t rajiv-app .
