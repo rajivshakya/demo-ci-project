@@ -33,3 +33,7 @@ jobs:
       - name: Build Application
         run: |
           echo "Building application..."
+          - name: Build Docker Image
+      # Step 6: Image build 
+      - name: Build Docker Image
+        run: docker build -t rajiv-app .
