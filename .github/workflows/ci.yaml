@@ -1,0 +1,35 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Display repo files (debugging)
+      - name: List files
+        run: ls -la
+
+      # Step 3: Run basic test
+      - name: Run Test
+        run: echo "CI Pipeline is working successfully 🚀"
+
+      # Step 4: (Optional) Install dependencies example
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies..."
+          # Example: apt-get update -y
+
+      # Step 5: (Optional) Build step
+      - name: Build Application
+        run: |
+          echo "Building application..."
