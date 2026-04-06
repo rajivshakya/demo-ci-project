@@ -29,3 +29,7 @@ jobs:
         uses: aquasecurity/trivy-action@v0.20.0
         with:
           image-ref: 'rajiv-app'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: false
+          severity: 'LOW,MEDIUM,HIGH,CRITICAL'
