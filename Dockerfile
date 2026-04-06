@@ -1,3 +1,8 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
-CMD ["echo", "Hello from Rajiv CI/CD 🚀"]
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    openssl
+
+CMD ["echo", "Vulnerable Image 🚨"]
